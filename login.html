@@ -150,6 +150,7 @@
             margin-top: 20px;
             font-size: 0.9rem;
         }
+        .logout-btn { background-color: #d9534f; color: white; border: none; padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; margin-left: auto; /* Align it to the right */ margin-right: 20px; /* Add space to the right */ } .logout-btn:hover { background-color: #c9302c; }
     </style>
 </head>
 <body>
@@ -170,6 +171,7 @@
             <span></span>
             <span></span>
         </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
     </nav>
 
     <div class="button-container">
@@ -189,6 +191,7 @@
             const menu = document.querySelector('.menu');
             menu.classList.toggle('active');
         }
+let logoutTimer; // Start the logout timer when the page loads function startLogoutTimer() { // Reset the timer each time the user interacts with the page clearTimeout(logoutTimer); logoutTimer = setTimeout(logout, 600000);  // 600000 ms = 10 minutes } // Logout function function logout() { // Clear session data sessionStorage.clear(); localStorage.clear(); // Redirect to login page window.location.href = 'index.html'; } // Event listeners to track user activity window.onload = startLogoutTimer;  // Start the timer when the page loads window.onmousemove = startLogoutTimer;  // Reset the timer on mouse movement window.onkeydown = startLogoutTimer;   // Reset the timer on key press // Toggle menu for mobile view function toggleMenu() { const menu = document.querySelector('.menu'); menu.classList.toggle('active'); }
     </script>
 
 </body>
