@@ -253,32 +253,7 @@
                 return false;  // Prevent form submission
   let logoutTimer;
 
-        // Start the logout timer when the page loads
-        function startLogoutTimer() {
-            // Reset the timer each time the user interacts with the page
-            clearTimeout(logoutTimer);
-            logoutTimer = setTimeout(logout, 600000);  // 600000 ms = 10 minutes
-        }
-
-        // Logout function
-        function logout() {
-            // Clear session data
-            sessionStorage.clear();
-            localStorage.clear();
-            // Redirect to login page
-            window.location.href = 'index.html';
-        }
-
-        // Event listeners to track user activity
-        window.onload = startLogoutTimer;  // Start the timer when the page loads
-        window.onmousemove = startLogoutTimer;  // Reset the timer on mouse movement
-        window.onkeydown = startLogoutTimer;   // Reset the timer on key press
-
-        // Toggle menu for mobile view
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-            }
+       
         }
     </script>
 
