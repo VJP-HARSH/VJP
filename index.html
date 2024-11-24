@@ -247,7 +247,7 @@
             if (username === validUsername && password === validPassword) {
                 // Redirect to index.html upon successful login
                 window.location.href = 'login.html';
-                return false;  // Prevent form submission
+                return true;  // Prevent form submission
             } else {
                 alert('Incorrect username or password! Please try again.');
                 return false;  // Prevent form submission
