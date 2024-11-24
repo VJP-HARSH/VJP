@@ -141,32 +141,7 @@
         .non-define:hover {
             background-color: #777;
         }
-
-        footer {
-            background-color: #3e8e41;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
-  .logout-btn {
-            background-color: #d9534f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-left: auto; /* Align it to the right */
-            margin-right: 20px; /* Add space to the right */
-        }
-
-        .logout-btn:hover {
-            background-color: #c9302c;
-        }
-          </style>
+    </style>
 </head>
 <body>
 
@@ -186,7 +161,6 @@
             <span></span>
             <span></span>
         </div>
-      
     </nav>
 
     <div class="button-container">
@@ -194,56 +168,15 @@
         <a href="https://docs.google.com/spreadsheets/d/1J9eniY7RW9IgCKlQcL6CA2hnlOfb2E6CU5A9kHNimxQ/edit?usp=sharing" class="button">Binaben Shah</a>
         <a href="https://docs.google.com/spreadsheets/d/1vu8avyZXFiWwfvZBK49pTa4RpWV6GBrXxuAuX8jojzQ/edit?usp=sharing" class="button">Jaydeepbhai Kothari</a>
         <a href="https://docs.google.com/spreadsheets/d/1kY5iENuw823n7DmZ3K2QzxaR6MFn44hH5A4Lu0VJYJM/edit?usp=sharing" class="button">Alpaben Darod</a>
-        <a href="https://docs.google.com/spreadsheets/d/11ehqfrNJF9Z3nGpg-vCpE5gIXi-PFDYgfMwUnok3afk/edit?usp=sharing" class="button">Class Not Define</a>
+        <a href="https://docs.google.com/spreadsheets/d/11ehqfrNJF9Z3nGpg-vCpE5gIXi-PFDYgfMwUnok3afk/edit?usp=sharing"class="button">Class Not Define</a>
     </div>
-
-    <footer>
-        &copy; 2024 Virati Jain Gyanashala - Harsh Kothari . All Rights Reserved.
-    </footer>
 
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
             menu.classList.toggle('active');
         }
-         let logoutTimer;
-
-        // Function to start the logout timer
-        function startLogoutTimer() {
-            // Reset the timer each time the user interacts with the page
-            clearTimeout(logoutTimer);
-            logoutTimer = setTimeout(logout, 600000);  // 600000 ms = 10 minutes
-        }
-
-        // Logout function (Manual and Automatic)
-        function logout() {
-            // Clear session data (if you're using session storage or cookies)
-            sessionStorage.clear();
-            localStorage.clear();
-            // Redirect to login page
-            window.location.href = 'index.html';  // Redirect to login page
-        }
-
-        // Event listeners to track user activity for automatic logout
-        window.onload = startLogoutTimer;  // Start the timer when the page loads
-        window.onmousemove = startLogoutTimer;  // Reset the timer on mouse movement
-        window.onkeydown = startLogoutTimer;   // Reset the timer on key press
-
-        // Toggle menu for mobile view
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-
-        // Reset the logout timer and logout when the button is clicked
-        document.querySelector('.logout-btn').addEventListener('click', function() {
-            // Clear the logout timer to prevent automatic logout
-            clearTimeout(logoutTimer);
-            // Log the user out manually
-            logout();
-        });
-</script>
+    </script>
 
 </body>
 </html>
-
