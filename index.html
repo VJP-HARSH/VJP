@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - વિરતી જૈન જ્ઞાનશાલા</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #3e8e41;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+            animation: fadeIn 2s;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar .menu a:hover {
+            background-color: #287233;
+            transform: scale(1.1);
+        }
+
+        .navbar .toggle-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .toggle-menu span {
+            background-color: white;
+            height: 3px;
+            width: 25px;
+            margin: 3px 0;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                background-color: #3e8e41;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .navbar .menu.active {
+                display: flex;
+            }
+
+            .navbar .toggle-menu {
+                display: flex;
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 50px 20px;
+        }
+
+        .button {
+            background-color: #3e8e41;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2e6a31;
+            transform: scale(1.1);
+        }
+
+        .non-define {
+            background-color: #999;
+        }
+
+        .non-define:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./logo.jpg" alt="Logo">
+            <h1>વિરતી જૈન જ્ઞાનશાલા</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="toggle-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="button-container">
+        <a href="https://docs.google.com/spreadsheets/d/1AWRTZF8AQWied6v1bGFYC3-w7_V9P6ydmV1mAPiuhFU/edit?usp=sharing" class="button">Bhavinbhai Shah</a>
+        <a href="https://docs.google.com/spreadsheets/d/1J9eniY7RW9IgCKlQcL6CA2hnlOfb2E6CU5A9kHNimxQ/edit?usp=sharing" class="button">Binaben Shah</a>
+        <a href="https://docs.google.com/spreadsheets/d/1vu8avyZXFiWwfvZBK49pTa4RpWV6GBrXxuAuX8jojzQ/edit?usp=sharing" class="button">Jaydeepbhai Kothari</a>
+        <a href="https://docs.google.com/spreadsheets/d/1kY5iENuw823n7DmZ3K2QzxaR6MFn44hH5A4Lu0VJYJM/edit?usp=sharing" class="button">Alpaben Darod</a>
+        <a href="https://docs.google.com/spreadsheets/d/11ehqfrNJF9Z3nGpg-vCpE5gIXi-PFDYgfMwUnok3afk/edit?usp=sharing"class="button">Class Not Define</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
