@@ -185,6 +185,24 @@
         .login-form button:hover {
             background-color: #2e6a31;
         }
+        
+        .logout-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: auto; /* Align it to the right */
+            margin-right: 20px; /* Add space to the right */
+        }
+
+        .logout-btn:hover {
+            background-color: #c9302c;
+        }
+
     </style>
 </head>
 <body>
@@ -199,6 +217,7 @@
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
         <div class="toggle-menu" onclick="toggleMenu()">
             <span></span>
@@ -232,6 +251,33 @@
             } else {
                 alert('Incorrect username or password! Please try again.');
                 return false;  // Prevent form submission
+  let logoutTimer;
+
+        // Start the logout timer when the page loads
+        function startLogoutTimer() {
+            // Reset the timer each time the user interacts with the page
+            clearTimeout(logoutTimer);
+            logoutTimer = setTimeout(logout, 600000);  // 600000 ms = 10 minutes
+        }
+
+        // Logout function
+        function logout() {
+            // Clear session data
+            sessionStorage.clear();
+            localStorage.clear();
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+
+        // Event listeners to track user activity
+        window.onload = startLogoutTimer;  // Start the timer when the page loads
+        window.onmousemove = startLogoutTimer;  // Reset the timer on mouse movement
+        window.onkeydown = startLogoutTimer;   // Reset the timer on key press
+
+        // Toggle menu for mobile view
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
             }
         }
     </script>
@@ -249,3 +295,5 @@
 
 </body>
 </html>
+
+
